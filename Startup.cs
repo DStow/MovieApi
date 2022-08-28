@@ -26,6 +26,9 @@ namespace MovieApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<Data.IMetadataReader>(new Data.MetadataCsvReader("metadata.csv"));
+            services.AddScoped(typeof(Repositories.IMetadataRepository), typeof(Repositories.MetaDataRepository));
+            services.AddScoped(typeof(Services.IMetadataService), typeof(Services.MetadataService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
