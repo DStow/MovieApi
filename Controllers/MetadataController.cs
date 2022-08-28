@@ -11,11 +11,6 @@ namespace MovieApi.Controllers
     [Route("[controller]")]
     public class MetadataController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<MetadataController> _logger;
         private readonly Services.IMetadataService _metadataService;
 
@@ -40,7 +35,7 @@ namespace MovieApi.Controllers
         public ActionResult Post(Models.Metadata metadata)
         {
             _metadataService.AddMetadata(metadata);
-            
+
             return Ok();
         }
     }
