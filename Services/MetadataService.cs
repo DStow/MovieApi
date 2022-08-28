@@ -13,6 +13,11 @@ namespace MovieApi.Services
             _metadataRepository = metadataRepository;
         }
 
+        public void AddMetadata(Metadata metadata)
+        {
+            _metadataRepository.Insert(metadata);
+        }
+
         public IEnumerable<Metadata> GetMetadatas(int movieId)
         {
             // holds all records for the movieId

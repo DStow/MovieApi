@@ -7,5 +7,6 @@ namespace MovieApi.Services
     public interface IMetadataService
     {
          IEnumerable<Metadata> GetMetadatas(int movieId);
+         void AddMetadata(Metadata metadata);
     }
 }

@@ -35,5 +35,13 @@ namespace MovieApi.Controllers
             else
                 return results.OrderBy(x => x.Language).ToList();
         }
+
+        [HttpPost]
+        public ActionResult Post(Models.Metadata metadata)
+        {
+            _metadataService.AddMetadata(metadata);
+            
+            return Ok();
+        }
     }
 }
